@@ -1,12 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+syntax on
+set t_Co=256
+set background=dark
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'micha/vim-colors-solarized'
 Plugin 'junegunn/fzf'
 call vundle#end()
 filetype plugin indent on
@@ -39,11 +42,10 @@ set undolevels=700
 map <Leader>f <esc>:FZF<CR>
 map <Leader>b Oimport ipdb; ipdb.set_trace()
 
-syntax on
+colorscheme solarized
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
 set autoindent
 set rnu
-let python_highlight_all = 1
