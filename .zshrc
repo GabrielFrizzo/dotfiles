@@ -110,4 +110,5 @@ export THIAGO_PASSWORD=y8yenhixa8
 export PATH="/home/frizzo/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-alias dotfiles='/usr/bin/git --git-dir=/home/frizzo/.cfg/ --work-tree=/home/frizzo'
+alias dotfiles='/usr/bin/git --git-dir=/home/frizzo/.dotfiles/ --work-tree=/home/frizzo'
+export FZF_DEFAULT_COMMAND="find -L"
