@@ -112,3 +112,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 alias dotfiles='/usr/bin/git --git-dir=/home/frizzo/.dotfiles/ --work-tree=/home/frizzo'
 export FZF_DEFAULT_COMMAND="find -L"
+alias pdf='evince'

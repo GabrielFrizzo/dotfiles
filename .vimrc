@@ -39,8 +39,15 @@ vnoremap > >gv  " better indentation
 set history=700
 set undolevels=700
 
+map <Leader>o <esc>:Vexplore<CR>
 map <Leader>f <esc>:FZF<CR>
 map <Leader>b Oimport ipdb; ipdb.set_trace()
+
+inoremap {      {}<Left>
+inoremap '      ''<Left>
+inoremap (      ()<Left>
+inoremap [      []<Left>
+inoremap "      ""<Left>
 
 colorscheme solarized
 set tabstop=4
