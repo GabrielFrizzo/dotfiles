@@ -112,4 +112,25 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 alias dotfiles='/usr/bin/git --git-dir=/home/frizzo/.dotfiles/ --work-tree=/home/frizzo'
 export FZF_DEFAULT_COMMAND="find -L"
-alias pdf='evince'
+alias open='xdg-open'
+
+function ghda {
+    for var in "$@"
+    do
+        ghdl -a "$var.vhdl" && \
+        echo "$var analisado!" && \
+        ghdl -e "$var" && \
+        echo "$var elaborado!" && \
+        ghdl -a "${var}_tb.vhdl" && \
+        echo "Testbench $var analisado!" && \
+        ghdl -e "${var}_tb" && \
+        echo "Testbench $var elaborado!" && \
+        ghdl -r "${var}_tb" --stop-time=3000ns --wave="${var}.ghw" && \
+        echo "Onda criada!"
+    done
+    echo "Abrindo..."
+    gtkwave "${var}.ghw"
+}
+
+export NVM_DIR="/home/frizzo/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
